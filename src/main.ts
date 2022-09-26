@@ -7,6 +7,11 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
+if (environment.isMock) {
+  import('./app/mock/mock.base').then(() => {
+    console.log('mock is start');
+  });
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

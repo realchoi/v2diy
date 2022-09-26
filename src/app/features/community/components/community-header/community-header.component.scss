@@ -1,0 +1,18 @@
+div.community-header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0 -24px;
+    padding: 20px;
+    background: #c8c8c8;
+}
+
+a.topic-menu {
+    margin: 10px;
+    color: #8090b5;
+}
+
+a.topic-menu:hover {
+    color: #eb5424;
+    font-weight: bolder;
+}

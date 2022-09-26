@@ -1,0 +1,19 @@
+<div *ngIf="commentItem" class="topic-item">
+    <div class="avatar">
+        <nz-avatar nzIcon="user" nzSrc="{{commentItem.author.avatarUrl}}" [nzText]="">
+        </nz-avatar>
+    </div>
+    <div class="infos">
+        <div class="info">
+            <a class="user-name" routerLink="/member/realchoi">{{commentItem.author.nickName}}</a> •
+            <span class="node">{{commentItem.replyTime | timeAgo}}</span>
+        </div>
+        <div class="content">
+            {{commentItem.content}}
+        </div>
+    </div>
+    <div class="count"><span>#{{commentItem.floorNumber}}</span></div>
+</div>
+<div class="divider" *ngIf="showDivider">
+    <nz-divider></nz-divider>
+</div>

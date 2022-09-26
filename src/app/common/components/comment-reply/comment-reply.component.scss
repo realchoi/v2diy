@@ -1,0 +1,32 @@
+.title {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    .main {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .sub {
+        margin-left: 10px;
+    }
+}
+
+.alert {
+    margin: 10px 0;
+}
+
+.reply {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    .key {
+        margin-left: 10px;
+    }
+
+    .explain {
+        margin-left: auto;
+    }
+}

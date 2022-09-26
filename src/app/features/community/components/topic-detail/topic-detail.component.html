@@ -1,0 +1,28 @@
+<div *ngIf="topicDetail && topicDetail.title" class="topic-title">
+    <div class="title-content">{{topicDetail.title}}</div>
+    <div class="info">
+        <a class="node" routerLink="/node/{{topicDetail.node.nameEn}}">{{topicDetail.node.nameCn}}</a> •
+        <a class="user-name" routerLink="/member/{{topicDetail.createUser}}">{{topicDetail.createUser}}</a> •
+        <span>{{topicDetail.createTime | timeAgo}}</span>
+        <span> • 最后由 <a class="user-name"
+                routerLink="/member/{{topicDetail.lastReplyUser}}">{{topicDetail.lastReplyUser}}</a>
+            回复于
+            {{topicDetail.lastReplyTime | timeAgo}}</span> •
+        <span>{{topicDetail.readTimes}} 次阅读</span>
+    </div>
+    <div class="divider">
+        <nz-divider></nz-divider>
+    </div>
+</div>
+
+<div class="topic-detail" *ngIf="topicDetail">
+    <div [innerHTML]="topicDetail.content | marked"></div>
+</div>
+<div class="comments" *ngIf="topicDetail && topicDetail.comments && topicDetail.comments.length > 0">
+    <app-comment-item *ngFor="let commentItem of topicDetail.comments; let i = index" [commentItem]="commentItem"
+        [showDivider]="i + 1 !== topicDetail.comments.length">
+    </app-comment-item>
+</div>
+<div class="comments">
+    <app-comment-reply></app-comment-reply>
+</div>

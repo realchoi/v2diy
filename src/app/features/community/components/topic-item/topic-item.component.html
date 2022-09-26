@@ -1,0 +1,22 @@
+<div class="topic-item" *ngIf="topicItem">
+    <div class="avatar">
+        <nz-avatar nzIcon="user" nzSrc="//cdn.v2ex.com/avatar/bab8/abf4/190048_large.png?m=1653817009"
+            [nzText]="topicItem.createUser"></nz-avatar>
+    </div>
+    <div class="infos">
+        <div class="title">
+            <a title="{{topicItem.title}}" routerLink="/topic/detail/{{topicItem.id}}">{{topicItem.title}}</a>
+        </div>
+        <div class="info">
+            <a class="node" routerLink="/node/{{topicItem.node.nameEn}}">{{topicItem.node.nameCn}}</a> •
+            <a class="user-name" routerLink="/member/{{topicItem.createUser}}">{{topicItem.createUser}}</a>
+            <span> • 最后由 <a class="user-name"
+                    routerLink="/member/{{topicItem.lastReplyUser}}">{{topicItem.lastReplyUser}}</a> 回复于
+                {{topicItem.lastReplyTime | timeAgo}}</span>
+        </div>
+    </div>
+    <div class="count"><a>{{topicItem.commentCount}}</a></div>
+</div>
+<div class="divider">
+    <nz-divider></nz-divider>
+</div>

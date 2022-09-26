@@ -1,0 +1,27 @@
+<div class="title">
+    <span class="main">发布新话题</span>
+</div>
+<div class="topic-title">
+    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择一个节点" [(ngModel)]="selectedNode">
+        <nz-option nzLabel="CPU / 处理器" nzValue="cpu"></nz-option>
+        <nz-option nzLabel="GPU / 显卡" nzValue="gpu"></nz-option>
+        <nz-option nzLabel="主板" nzValue="mainboard"></nz-option>
+    </nz-select>
+    <div class="topic-title-input">
+        <nz-input-group [nzSuffix]="inputClearTpl">
+            <input type="text" nz-input [(ngModel)]="topicTitle" placeholder="请在这里输入主题，且尽量让内容表达完整" />
+        </nz-input-group>
+        <ng-template #inputClearTpl>
+            <span nz-icon class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle" *ngIf="topicTitle"
+                (click)="topicTitle = null"></span>
+        </ng-template>
+    </div>
+</div>
+<textarea rows="24" nz-input [(ngModel)]="topicContent" placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea>
+<div class="alert">
+    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>
+</div>
+<div class="reply">
+    <button nz-button nzType="primary" (click)="submitReply()" [nzLoading]="isLoading">确认发布</button>
+    <div class="explain"><a href="https://markdown.com.cn/basic-syntax/" target="_blank">排版说明</a></div>
+</div>

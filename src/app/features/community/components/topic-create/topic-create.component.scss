@@ -1,0 +1,46 @@
+.title {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    .main {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .sub {
+        margin-left: 10px;
+    }
+}
+
+.topic-title {
+    display: flex;
+    margin: 10px 0;
+
+    .topic-title-input {
+        margin-left: 5px;
+        width: 80%;
+    }
+}
+
+nz-select {
+    width: 20%;
+}
+
+.alert {
+    margin: 10px 0;
+}
+
+.reply {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    .key {
+        margin-left: 10px;
+    }
+
+    .explain {
+        margin-left: auto;
+    }
+}

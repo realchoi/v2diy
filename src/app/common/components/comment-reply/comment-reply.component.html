@@ -1,0 +1,15 @@
+<div class="title">
+    <span class="main">回复</span>
+    <span class="sub">请尽量回复有建设性的内容</span>
+</div>
+
+<textarea rows="4" nz-input [(ngModel)]="replyContent" (keydown.control.enter)="onCtrlEnter($event)"
+    placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea>
+<div class="alert">
+    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>
+</div>
+<div class="reply">
+    <button nz-button nzType="primary" (click)="submitReply()" [nzLoading]="isLoading">提交回复</button>
+    <span class="key"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span>
+    <div class="explain"><a href="https://markdown.com.cn/basic-syntax/" target="_blank">排版说明</a></div>
+</div>
