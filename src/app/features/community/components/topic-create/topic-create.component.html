@@ -17,7 +17,10 @@
         </ng-template>
     </div>
 </div>
-<textarea rows="24" nz-input [(ngModel)]="topicContent" placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea>
+<!-- <textarea rows="24" nz-input [(ngModel)]="topicContent" placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea> -->
+
+<app-markdown [(ngModel)]="topicContent"></app-markdown>
+
 <div class="alert">
     <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>
 </div>

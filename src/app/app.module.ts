@@ -35,6 +35,7 @@ import { CommentItemComponent } from './common/components/comment-item/comment-i
 import { TimeAgoPipe } from './common/pipes/time-ago.pipe';
 import { CommentReplyComponent } from './common/components/comment-reply/comment-reply.component';
 import { TopicCreateComponent } from './features/community/components/topic-create/topic-create.component';
+import { MarkdownComponent } from './common/components/markdown/markdown.component';
 
 /**NGZorro 组件全局配置 */
 const ngZorroConfig: NzConfig = {
@@ -57,6 +58,7 @@ registerLocaleData(zh);
     TimeAgoPipe,
     CommentReplyComponent,
     TopicCreateComponent,
+    MarkdownComponent,
   ],
   imports: [
     BrowserModule,

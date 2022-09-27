@@ -61,6 +61,7 @@ export class TopicCreateComponent implements OnInit {
       return false;
     }
     // 内容
+    console.log({ topicContent: this.topicContent });
     if (!this.topicContent || this.topicContent.length < 5) {
       this.showAlert = true;
       this.alertType = "error";
