@@ -17,9 +17,25 @@
         </ng-template>
     </div>
 </div>
-<!-- <textarea rows="24" nz-input [(ngModel)]="topicContent" placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea> -->
+<div class="tool">
+    <span nz-icon [nzIconfont]="'icon-zhayan'" title="添加表情"></span>
+    <span nz-icon [nzIconfont]="'icon-tupian'" title="上传图片"></span>
+    <span nz-icon [nzIconfont]="'icon-code'" title="插入代码"></span>
+    <span nz-icon [nzIconfont]="'icon-zitiyulan'" title="预览" (click)="preview()"></span>
+</div>
 
-<app-markdown [(ngModel)]="topicContent"></app-markdown>
+<ng-container *ngIf="!isPreview">
+    <textarea nz-input rows="20" nzAutosize="true" [(ngModel)]="topicContent"
+        placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea>
+</ng-container>
+
+<ng-container *ngIf="isPreview">
+    <div class="preview">
+        <div [innerHTML]="topicContent | marked"></div>
+    </div>
+</ng-container>
+
+<!-- <app-markdown [(ngModel)]="topicContent"></app-markdown> -->
 
 <div class="alert">
     <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>

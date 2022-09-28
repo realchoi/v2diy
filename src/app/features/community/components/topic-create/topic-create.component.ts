@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { NzIconService } from 'ng-zorro-antd/icon';
+
 @Component({
   selector: 'app-topic-create',
   templateUrl: './topic-create.component.html',
   styleUrls: ['./topic-create.component.scss']
 })
 export class TopicCreateComponent implements OnInit {
+
   /**选择的节点 */
   selectedNode = null;
   /**话题的主题 */
-  topicTitle: string | null = null;;
+  topicTitle: string | null = null;
   /**话题内容 */
   topicContent: string = "";
   /**回复按钮是否显示加载状态 */
@@ -19,10 +22,25 @@ export class TopicCreateComponent implements OnInit {
   showAlert: boolean = false;
   /**提示类型 */
   alertType: "success" | "info" | "warning" | "error" = "success";
+  /**发布反馈信息 */
   alertMessage: string = "发布成功";
-  constructor(private _http: HttpClient) { }
+
+  /**当前是否是预览状态 */
+  isPreview: boolean = false;
+
+  constructor(private _http: HttpClient,
+    private nzIconService: NzIconService) {
+    this.nzIconService.fetchFromIconfont({
+      scriptUrl: 'https://at.alicdn.com/t/c/font_3678729_1zp5wmxwuuy.js'
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  /**预览 markdown 文本 */
+  preview(): void {
+    this.isPreview = !this.isPreview;
   }
 
   /**提交回复 */
