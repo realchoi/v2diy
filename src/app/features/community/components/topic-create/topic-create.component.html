@@ -38,7 +38,8 @@
 <!-- <app-markdown [(ngModel)]="topicContent"></app-markdown> -->
 
 <div class="alert">
-    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>
+    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon
+        (nzOnClose)="showAlert = false"></nz-alert>
 </div>
 <div class="reply">
     <button nz-button nzType="primary" (click)="submitReply()" [nzLoading]="isLoading">确认发布</button>

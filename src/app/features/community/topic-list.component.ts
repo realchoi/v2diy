@@ -24,14 +24,14 @@ export class TopicListComponent implements OnInit {
   }
 
   getTopics(): void {
-    const topics = of(TOPICS);
-    console.log('文章', topics);
-    topics.subscribe(topics => this.topics = topics);
+    // const topics = of(TOPICS);
+    // console.log('文章', topics);
+    // topics.subscribe(topics => this.topics = topics);
 
-    // this._http.get("/api/topic/list").subscribe((res: any) => {
-    //   console.log("假数据：", res);
-    //   this.topics = res.data as ITopicItem[];
-    // })
+    this._http.get("/api/topic/list").subscribe((res: any) => {
+      console.log("假数据：", res);
+      this.topics = res.data as ITopicItem[];
+    })
   }
 
   createTopic(): void {

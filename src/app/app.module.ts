@@ -7,7 +7,7 @@ import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config'
@@ -35,6 +35,7 @@ import { CommentItemComponent } from './common/components/comment-item/comment-i
 import { TimeAgoPipe } from './common/pipes/time-ago.pipe';
 import { CommentReplyComponent } from './common/components/comment-reply/comment-reply.component';
 import { TopicCreateComponent } from './features/community/components/topic-create/topic-create.component';
+import { HttpRequestInterceptor } from './common/services/interceptors/http-request.interceptor';
 
 /**NGZorro 组件全局配置 */
 const ngZorroConfig: NzConfig = {
@@ -78,7 +79,8 @@ registerLocaleData(zh);
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
-    { provide: NZ_CONFIG, useValue: ngZorroConfig }
+    { provide: NZ_CONFIG, useValue: ngZorroConfig },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

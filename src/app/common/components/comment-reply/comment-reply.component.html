@@ -6,7 +6,8 @@
 <textarea rows="4" nz-input [(ngModel)]="replyContent" (keydown.control.enter)="onCtrlEnter($event)"
     placeholder="建议使用 markdown 语法（详见右下角排版说明）"></textarea>
 <div class="alert">
-    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon></nz-alert>
+    <nz-alert *ngIf="showAlert" [nzType]="alertType" nzCloseable [nzMessage]="alertMessage" nzShowIcon
+        (nzOnClose)="showAlert = false"></nz-alert>
 </div>
 <div class="reply">
     <button nz-button nzType="primary" (click)="submitReply()" [nzLoading]="isLoading">提交回复</button>

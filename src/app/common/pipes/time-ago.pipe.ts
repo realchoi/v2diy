@@ -17,10 +17,17 @@ export class TimeAgoPipe implements PipeTransform {
    * @param dateTime 待比较的时间
    * @returns 
    */
-  private pastTime(dateTime: Date): string {
+  private pastTime(dateTime: Date | string): string {
     let now = new Date();
+    let tempDateTime: Date;
+    if (dateTime instanceof Date) {
+      tempDateTime = dateTime;
+    }
+    else {
+      tempDateTime = new Date(dateTime);
+    }
     // 起始日期到现在相差秒数
-    let seconds = now.getTime() / 1000 - dateTime.getTime() / 1000
+    let seconds = now.getTime() / 1000 - tempDateTime.getTime() / 1000
     // 相差分钟数
     let minutes = Math.floor(seconds / 60);
     // 小于 1 天，则精确到 m 小时 n 分钟

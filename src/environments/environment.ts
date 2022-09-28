@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  isMock: true
+  isMock: true,
+  baseApiUrl: 'https://console-mock.apipost.cn/mock/a1ae02e6-05ae-441b-8441-d1e04161e8bd'
 };
 
 /*
