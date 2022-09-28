@@ -1,27 +1,13 @@
-# V2diy
+# V2DIY —— 自由 DIY
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+## 说明
+V2DIY（Way to DIY），攒机（DIY）爱好者们的社区。
 
-## Development server
+该项目是一个为广大攒机爱好者提供经验和具体方案的网站，使用 Angular 构建。
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+在这里，可以和广大网友一同交流经验，也可以直接获取到由我们整理的攒机方案。
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## TODO
+[] 完善`社区`功能
+[] 新增`登录`/`注册`功能
+[] 新增`方案`板块
